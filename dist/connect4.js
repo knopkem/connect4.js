@@ -1,18 +1,13 @@
-
-class RenderManager {
-    
-    constructor(ctx) {
+var RenderManager = (function () {
+    function RenderManager(ctx) {
         this._ctx = ctx;
-    } 
-    
-    public start() {
+    }
+    RenderManager.prototype.start = function () {
         this._ctx.fillStyle = "rgb(100, 100, 100)";
         this._ctx.fillRect(10, 10, 400, 400);
-    }
-    
-    private _ctx;
-}
-
+    };
+    return RenderManager;
+})();
 function exec() {
     var canv = document.createElement("canvas");
     canv.width = 512;
@@ -22,5 +17,5 @@ function exec() {
     var renderer = new RenderManager(ctx);
     renderer.start();
 }
-
 exec();
+//# sourceMappingURL=connect4.js.map
